@@ -4,15 +4,11 @@ birthday = new Date(birthday)
 
 const now = new Date();
 
-let day2 = new Date((now.getFullYear() - 14), now.getMonth(), (now.getDate() +1))
-console.log(day2)
+let goodBirthday = new Date((now.getFullYear() - 14), now.getMonth(), (now.getDate() +1))
+console.log(goodBirthday)
 
 function control(now, birthday) {
-    console.log("now " + now.getTime())
-    console.log("day2 " + day2.getTime())
-    console.log("birthday " + birthday.getTime())
-    
-    if (birthday.getTime() <= day2.getTime()) {
+    if (birthday.getTime() <= goodBirthday.getTime()) {
         return (true)
     }
     else {
