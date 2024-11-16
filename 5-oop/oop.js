@@ -47,7 +47,6 @@ Elf.prototype.spell = function(spell) {
 };
 
 Elf.prototype.creatSpell = function(newSpell) {
-    let spells = [`'Плач банши'`, `'Ослепительное солнце'`];
     if (spells.find (el => el == newSpell)){
         return (`Данное заклинание было создано ранее`)
     } else{
