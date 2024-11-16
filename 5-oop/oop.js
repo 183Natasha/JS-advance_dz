@@ -65,6 +65,7 @@ orc.speak()
 elf.speak()
 
 console.log(orc.hit(orc.weapon = false))
+console.log(orc.hit(false))
 console.log(orc.hit('топор'))
 
 console.log(elf.spell(`'Водный поток'`))
