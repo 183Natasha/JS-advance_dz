@@ -1,7 +1,7 @@
 'use strict'
 
 function Person(race, name, language) {
-    this.race = race;     // Свойство расса
+    this.race = race;     // Свойство раса
     this.name = name;   // Свойство имя
     this.language = language;   // Свойство язык
 }
@@ -40,14 +40,22 @@ function Elf(race, name, language, spells) {
 Elf.prototype = Object.create(Person.prototype);
 Elf.prototype.constructor = Elf; // Устанавливаем правильный конструктор
 
-Elf.prototype.spell = function(spells) {
-    return  (`${this.name} применил заклинание ${spells}`)
+let spells = [`'Плач банши'`, `'Ослепительное солнце'`];
+
+Elf.prototype.spell = function(spell) {
+    return  (`${this.name} применил заклинание ${spell}`)
 };
 
-// Elf.prototype.creatSpell = function((newSpell) => {
-//     let spells= ['Зов ветра', 'Ослепительное солнце'];
-
-// }) ;
+Elf.prototype.creatSpell = function(newSpell) {
+    let spells = [`'Плач банши'`, `'Ослепительное солнце'`];
+    if (spells.find (el => el == newSpell)){
+        return (`Данное заклинание было создано ранее`)
+    } else{
+        spells.push(newSpell);
+        return (`Создано новое заклинание ${newSpell}. 
+            \nТеперь ${this.race} может применять следующие заклинания: ${spells}`)
+    }
+} ;
 
 
 const orc = new Orс( 'орк', 'Pppг','оркский');
@@ -56,7 +64,12 @@ const elf = new Elf('эльф', 'Элланиэль', 'эльфийский' );
 
 orc.speak()
 elf.speak()
+
 console.log(orc.hit(orc.weapon = false))
 console.log(orc.hit('топор'))
+
 console.log(elf.spell(`'Водный поток'`))
+console.log(elf.creatSpell(`'Зов вейлы'`))
+console.log(elf.creatSpell(`'Плач банши'`))
+console.log(elf.spell(spells[1]))
 
