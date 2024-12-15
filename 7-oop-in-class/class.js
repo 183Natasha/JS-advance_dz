@@ -32,7 +32,7 @@ class Orс extends Person{
 
 // //Создаем дочерний класс Elf
 class Elf extends Person{
-    static spellsAll = [`'Плач банши'`, `'Ослепительное солнце'`];
+    #spellsAll = [`'Плач банши'`, `'Ослепительное солнце'`];
     constructor (race, name, language, spells) {
         super(race, name, language);
         this.spells = spells;        
@@ -44,12 +44,12 @@ class Elf extends Person{
         return  (`${this.name} применил заклинание ${spells}`)
     }
     creatSpell(newSpell){
-        if (Elf.spellsAll.find (el => el == newSpell)){
+        if (this.#spellsAll.find (el => el == newSpell)){
             return (`Данное заклинание было создано ранее`)
         } else{
-            Elf.spellsAll.push(newSpell);
+            this.#spellsAll.push(newSpell);
             return (`Создано новое заклинание ${newSpell}. 
-                \nТеперь ${this.race} может применять следующие заклинания: ${Elf.spellsAll}`)
+                \nТеперь ${this.race} может применять следующие заклинания: ${this.#spellsAll}`)
         }
     }
 }
