@@ -32,6 +32,7 @@ class Orс extends Person{
 
 // //Создаем дочерний класс Elf
 class Elf extends Person{
+    static spellsAll = [`'Плач банши'`, `'Ослепительное солнце'`];
     constructor (race, name, language, spells) {
         super(race, name, language);
         this.spells = spells;        
@@ -43,16 +44,16 @@ class Elf extends Person{
         return  (`${this.name} применил заклинание ${spells}`)
     }
     creatSpell(newSpell){
-        if (spellsAll.find (el => el == newSpell)){
+        if (Elf.spellsAll.find (el => el == newSpell)){
             return (`Данное заклинание было создано ранее`)
         } else{
-            spellsAll.push(newSpell);
+            Elf.spellsAll.push(newSpell);
             return (`Создано новое заклинание ${newSpell}. 
-                \nТеперь ${this.race} может применять следующие заклинания: ${spellsAll}`)
+                \nТеперь ${this.race} может применять следующие заклинания: ${Elf.spellsAll}`)
         }
     }
 }
-let spellsAll = [`'Плач банши'`, `'Ослепительное солнце'`];
+
 
 
 const orc = new Orс( 'орк', 'Pppг','оркский');
@@ -69,3 +70,4 @@ console.log(orc.hit('топор'))
 console.log(elf.spell(`'Водный поток'`))
 console.log(elf.creatSpell(`'Зов вейлы'`))
 console.log(elf.creatSpell(`'Плач банши'`))
+
