@@ -19,14 +19,14 @@ class Orс extends Person{
     }
     speak(){
         return(`Я здесь! Меня зовут ${this.name}, мой родной язык - ${this.language}`)
-    }
+    } //Модификация метода "говорить" для Орка 
     hit(weapon){
         if (weapon == false){
             return (`Нанесение удара невозможно. У персонажа ${this.name} нет оружия.`) ;        
         } else{
-            return  (`${this.name} нанес удар, выбранное оружие - ${weapon}`) ; // Метод hit
+            return  (`${this.name} нанес удар, выбранное оружие - ${weapon}`) ; 
         }
-    }
+    }// Метод hit
 }
 
 
