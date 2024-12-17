@@ -8,11 +8,12 @@ request.addEventListener('load', function () {
     request.open('GET', abilities[0].ability.url);
     request.send();
 
+
     request.addEventListener('load', function () {
-        const { names } = JSON.parse(this.responseText);
-        for (let el in names) {
-            if (names[el].language.name === 'en') {
-                console.log(names[el].name)
+        const { effect_entries} = JSON.parse(this.responseText);
+        for (let el in effect_entries ) {
+            if (effect_entries [el].language.name === 'en') {
+                console.log(effect_entries [el].effect)
             }
         }
     })
