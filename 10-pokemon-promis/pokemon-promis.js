@@ -13,5 +13,5 @@ fetch('https://pokeapi.co/api/v2/pokemon/ditto')
             }
         }
     })
-    
-    .catch(()=>console.log("Произошла ошибка"))
+
+    .catch((error)=>console.log(`Error: ${error.message}`))
